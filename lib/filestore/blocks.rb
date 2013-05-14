@@ -9,15 +9,6 @@ def get_blocks
   filepaths.each do |filepath|
     # read file
     record = YAML::load( File.open( filepath ) )
-    # unique record already
-    unless record.has_key?( 'uuid' )
-      # add uuid for missing
-      record[ 'uuid' ] = SecureRandom.hex( 20 )
-      # write file
-      File.open( filepath, 'w') { |f| f.write( record.to_yaml ) }
-      # read file again
-      record = YAML::load( File.open( filepath ) )
-    end
     # add base filename as blockname
     record[ 'name' ] = File.basename( filepath, '.*' )
     # add to blocks

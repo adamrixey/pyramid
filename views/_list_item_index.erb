@@ -8,7 +8,7 @@
 
 <h3>Blocks</h3>
 <% @blocks.each do |block| %>
-<button onclick="add_item( '<%= block[ 'name' ] %>' )">Add</button>
+<button onclick="add_item( 'b <%= block[ 'name' ] %>' )">Add</button>
 <a href="/blocks/<%= block[ 'name' ] %>">
 <%= block[ 'name' ] %></a>
 <%= block[ 'desc' ] %><br/>

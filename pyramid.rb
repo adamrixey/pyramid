@@ -1,4 +1,4 @@
-class Pyravid < Sinatra::Application
+class Pyramid < Sinatra::Application
 
   get '/' do
     @packages = get_packages
@@ -8,8 +8,8 @@ class Pyravid < Sinatra::Application
 
   post '/' do
     name = ActiveSupport::Inflector.parameterize( params[ :name ] )
-    list = { 'list' => params[ :list ].split( "\r\n" ) }
-    if write_project( name, list )
+    list = params[ :list ].split( "\r\n" )
+    if write_project( name, list, params[ :overwrite ] )
       flash[ :success ] = 'Project update successful.'
       redirect "/projects/#{ name }"
     else
@@ -45,7 +45,7 @@ class Pyravid < Sinatra::Application
   get '/projects/:name/blocks.csv' do
     content_type 'text/plain'
     project = get_first_project( 'name', params[ :name ] )
-    project_block_display( project[ 'list' ] )
+    list_layout( project[ 'list' ] )
   end
 
 end

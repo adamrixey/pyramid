@@ -2,9 +2,10 @@ Project: <%= @project[ 'name' ]%><br><br>
 
 <form action="/" method="POST">
 <input type="hidden" name="name" value="<%= @project[ 'name' ]%>">
+<input type="hidden" name="overwrite" value="true">
 Package &amp; Block List (in drawing order)<br>
 <textarea name="list" rows="15" cols="40">
-<%= @project[ 'list' ].join( "\r\n" ) %>
+<%= @project[ 'list' ].map{ |i| i[ 'display' ] }.join( "\r\n" ) %>
 </textarea><br>
 
 <input type="submit" value="Submit">

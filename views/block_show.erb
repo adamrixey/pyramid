@@ -4,20 +4,18 @@ Desc: <%= @block[ 'desc' ] %><br><br>
 
 <table>
 <th>
-  <td>Tag</td>
-  <td>Value</td>
+  <td>Label</td>
+  <td>Pretag</td>
   <td>Signal</td>
   <td>Connector</td>
 </th>
 <% @block[ 'attributes' ].each do |attrib| %>
 <tr>
 <td></td>
-<td><%= attrib[ 'tag' ] %></td>
-<td><%= attrib[ 'value' ] %></td>
+<td><%= attrib[ 'label' ] %></td>
+<td><%= attrib[ 'pretag' ] %></td>
 <td><%= attrib[ 'signal' ] %></td>
 <td><%= attrib[ 'connector' ] %></td>
 </tr>
 <% end %>
 </table>
-<br>
-UUID: <%= @block[ 'uuid' ] %>
