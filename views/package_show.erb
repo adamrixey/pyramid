@@ -1,0 +1,21 @@
+<h2><%= @package[ 'name' ] %> package</h2>
+
+Desc: <%= @package[ 'desc' ] %><br><br>
+
+<table>
+<th>
+  <td>Name</td>
+  <td>x</td>
+  <td>y</td>
+  <td>z</td>
+</th>
+<% @package[ 'blocks' ].each do |block| %>
+<tr>
+<td></td>
+<td><%= block[ 'name' ] %></td>
+<td><%= block[ 'x' ] %></td>
+<td><%= block[ 'y' ] %></td>
+<td><%= block[ 'z' ] %></td>
+</tr>
+<% end %>
+</table>

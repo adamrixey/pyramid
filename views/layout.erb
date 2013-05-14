@@ -1,0 +1,73 @@
+<html>
+<head>
+  <style>
+    body, header {
+      margin: 0;
+    }
+    .wrap {
+      width: 960px;
+      margin: 0 auto;
+    }
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    header {
+      width: 100%;
+      background-color: #F5F5F7;
+      padding: 10px;
+    }
+    .appname {
+      font-size: 22px;
+      margin-right: 6px;
+      text-decoration: none;
+    }
+    .appdesc {
+      font-style: italic;
+    }
+    .content {
+      margin: 20px 0 60px 0;
+    }
+    .flash {
+      width: 98%;
+      padding: 10px 2%;
+    }
+    .success {
+      background-color: #F5FFF5;
+    }
+    .error {
+      background-color: #FFF0F0;
+    }
+  </style>
+  <script type="text/javascript">
+    function add_item( line ) {
+      ta = document.getElementsByTagName( 'TEXTAREA' )[ 0 ]
+      if ( ta.value == '' ) {
+        ta.value = line
+      } else {
+        ta.value = ta.value + "\r\n" + line
+      }
+    }
+  </script>
+</head>
+<body>
+
+<div class="wrap">
+<header>
+  <a class="appname" href="/">Pyravid</a>
+  <span class="appdesc">Audiovisual block projects</span>
+</header>
+
+<% flash_types.select{ |kind| flash.has?( kind ) }.each do |kind| %>
+<div class="flash <%= kind %>">
+  <%= flash[ kind ] %>
+</div>
+<% end %>
+
+<div class="content">
+<%= yield %>
+</div>
+
+</div>
+
+</body>
+</html>

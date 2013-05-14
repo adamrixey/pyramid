@@ -1,0 +1,15 @@
+<h3>Packages</h3>
+<% @packages.each do |package| %>
+<button onclick="add_item( '<%= package[ 'name' ] %>' )">Add</button>
+<a href="/packages/<%= package[ 'name' ] %>">
+<%= package[ 'name' ] %></a>
+<%= package[ 'desc' ] %><br/>
+<% end %>
+
+<h3>Blocks</h3>
+<% @blocks.each do |block| %>
+<button onclick="add_item( '<%= block[ 'name' ] %>' )">Add</button>
+<a href="/blocks/<%= block[ 'name' ] %>">
+<%= block[ 'name' ] %></a>
+<%= block[ 'desc' ] %><br/>
+<% end %>
