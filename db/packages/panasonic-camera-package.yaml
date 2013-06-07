@@ -1,0 +1,15 @@
+---
+blocks:
+- name: panasonic-akhc3500
+  x: -400
+  y: 0
+  z: 0
+- name: panasonic-akhc3500
+  x: -200
+  y: 0
+  z: 0
+- name: panasonic-akhc3500
+  x: 0
+  y: 0
+  z: 0
+desc: Panasonic HD Camera Package

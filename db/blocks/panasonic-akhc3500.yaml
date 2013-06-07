@@ -1,0 +1,15 @@
+---
+attributes:
+- pretag: in1
+  connector: bnc
+  label: HD-SDI In
+  signal: hdsdi
+- pretag: out1
+  connector: hdmi1
+  label: HDMI Out
+  signal: hdmi
+- pretag: bi1
+  connector: db9
+  label: Serial 1
+  signal: rs232
+desc: Panasonic AK-HC3500
